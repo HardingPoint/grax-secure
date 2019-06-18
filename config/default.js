@@ -1,6 +1,7 @@
 const { env } = process;
 
 module.exports = {
+  test: "testing",
   graxBax: {
     baseUrl: "https://api.grax.io/dev/api", //env["ENGAGEMENTGRAPH_APIURL"] || "" + "/test/api",
     apiKey: env["ENGAGEMENTGRAPH_GATEWAYTOKEN"],
@@ -20,15 +21,15 @@ module.exports = {
   elastic: {
     aws: {
       url: env["ESENDPOINT"],
-      accessKey: env["ESACCESSKEYID"],
-      secretAccessKey: env["ESSECRETACCESSKEY"],
-      region: env["ESREGION"]
+      accessKey: env["ESACCESSKEYID"] || env["S3ACCESSKEYID"],
+      secretAccessKey: env["ESSECRETACCESSKEY"] || env["S3SECRETACCESSKEY"],
+      region: env["ESREGION"] || env["S3REGION"]
     },
     bonsaiUrl: env["BONSAI_URL"],
     //todo: converge to URL (with auth prefix) once we've elminated grax configuration
     elasticIo: {
-      url: env["FOUNDELASTICSEARCH_URL"],
-      user: env["FOUNDELASTICSEARCH_USER"],
+      url: env["FOUNDELASTICSEARCH_URL"] || "https://" + env["FOUNDELASTICSEARCH_HOST"],
+      user: env["FOUNDELASTICSEARCH_USER"] || "elastic",
       password: env["FOUNDELASTICSEARCH_PASSWORD"]
     },
     dateTimeFormat: "YYYY-MM-DDTHH:mm:ss",
