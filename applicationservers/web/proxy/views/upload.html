@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>File Processing - GRAX.io</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.6.2/styles/salesforce-lightning-design-system.min.css">
+</head>
+<body>
+
+
+<article class="slds-card">
+    <div class="slds-card__header slds-grid">
+        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title">
+                    <a href="javascript:void(0);" class="slds-card__header-link slds-truncate">
+                        <span class="slds-text-heading_small">GRAX.io - Data Processing</span>
+                    </a>
+                </h2>
+            </div>
+        </header>
+    </div>
+    <div class="slds-card__body slds-card__body_inner">
+        <div class="slds-progress-bar progress" aria-valuemin="0" aria-valuemax="100" role="progressbar">
+            <span class="slds-progress-bar__value progress-bar" style="width: 0%;">
+                <span class="slds-assistive-text"></span>
+            </span>
+        </div>
+
+        <div class="slds-p-vertical_medium">
+            <div class="slds-form-element">
+                <span class="slds-form-element__label" id="file-selector-primary-label">Upload CSV or Zip Files</span>
+                <div class="slds-form-element__control">
+                    <div class="slds-file-selector slds-file-selector_files">
+                        <div class="slds-file-selector__dropzone">
+                            <input id="upload-input" class="slds-file-selector__input slds-assistive-text" type="file" name="uploads[]" multiple="multiple" />
+                            <label class="slds-file-selector__body" for="upload-input" id="file-selector-secondary-label">
+                                <span class="slds-file-selector__button slds-button slds-button_neutral">Upload Files</span>
+                                <span class="slds-file-selector__text slds-medium-show">or Drop Files</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script>
+    var tokenParam = window.location.search.match(/[\?&]token\=([^&]+)/);
+
+    $.ajax({
+        url: '/javascripts/upload.js' + (tokenParam ? ('?token=' + decodeURIComponent(tokenParam[1])) : ''),
+        dataType: 'script',
+        cache: true
+    });
+</script>
+</body>
+</html>

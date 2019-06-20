@@ -1,7 +1,6 @@
 const { env } = process;
 
 module.exports = {
-  test: "testConfig",
   graxBax: {
     baseUrl: "https://api.grax.io/dev/api", //env["ENGAGEMENTGRAPH_APIURL"] || "" + "/test/api",
     apiKey: env["ENGAGEMENTGRAPH_GATEWAYTOKEN"],
