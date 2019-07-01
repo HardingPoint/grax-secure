@@ -1,3 +1,3 @@
-web: ./index web
-grax-asynch: ./index async
-grax-asynch-bulk: ./index bulk
+web: ./grax web
+grax-asynch: ./grax async
+grax-asynch-bulk: ./grax bulk
