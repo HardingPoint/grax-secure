@@ -18,6 +18,11 @@
       "as": "SCHEDULER"
     }
   ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/peterkeen/heroku-buildpack-vendorbinaries"
+    }
+  ],
   "env": {
     "GRAX_SFDC_USERNAME":{
       "description": "Salesforce Username : Salesforce user for GRAX",
