@@ -20,7 +20,7 @@
   ],
   "buildpacks": [
     {
-      "url": "https://github.com/peterkeen/heroku-buildpack-vendorbinaries"
+      "url": "https://github.com/HardingPoint/heroku-buildpack-vendorbinaries"
     }
   ],
   "env": {
