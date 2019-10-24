@@ -6,4 +6,4 @@ To deploy to a new Heroku instance:
 - Click "Add buildpack", and fill in the following under "Enter Buildpack URL", then click "Save changes": https://github.com/HardingPoint/heroku-buildpack-vendorbinaries
 - In "Deploy" tab, connect this `grax-secure` repository and deploy the master branch.
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://www.heroku.com/deploy/?template=https://github.com/HardingPoint/grax-secure)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://www.heroku.com/deploy/?template=https://github.com/HardingPoint/grax-secure/tree/release-candidate)
