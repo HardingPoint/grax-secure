@@ -20,15 +20,13 @@ $('#upload-input').on('change', function(){
             formData.append('uploads[]', file, file.name);
         }
 
-        var tokenParam = window.location.search.match(/[\?&]token\=([^&]+)/);
-
         var updateProgressBar = function(percentComplete) {
             $('.progress-bar .slds-assistive-text').text(percentComplete + '%');
             $('.progress-bar').width(percentComplete + '%');
         };
 
         $.ajax({
-            url: '/upload' + (tokenParam ? ('?token=' + decodeURIComponent(tokenParam[1])) : ''),
+            url: '/upload' + window.location.search,
             type: 'POST',
             data: formData,
             processData: false,
@@ -62,6 +60,9 @@ $('#upload-input').on('change', function(){
                 }, false);
 
                 return xhr;
+            },
+            error: function (xhr, status, error) {
+                document.body.innerText = xhr.statusText + ': ' + xhr.responseText;
             }
         });
 
