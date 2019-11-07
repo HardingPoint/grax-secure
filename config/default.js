@@ -1,15 +1,16 @@
 const { env } = process;
+const defaultConfigName = require("../lib/configuration/configurationAdapters/environment/defaultConfigName");
 
 module.exports = {
   graxBax: {
-    baseUrl: "https://api.grax.io/dev/api", //env["ENGAGEMENTGRAPH_APIURL"] || "" + "/test/api",
+    baseUrlHost: "api.grax.io", //env["ENGAGEMENTGRAPH_APIURLHOST"] || "https://api.grax.io",
+    baseUrlPath: "/test/api", //env["ENGAGEMENTGRAPH_APIURLPATH"] || "/dev/api",
     apiKey: env["ENGAGEMENTGRAPH_GATEWAYTOKEN"],
     apiToken: env["ENGAGEMENTGRAPH_APITOKEN"],
     plainConfig: env["GRAX_USE_PLAIN_CONFIG"],
     licenseToken: env["ENGAGEMENTGRAPH_LICENSETOKEN"]
   },
   backup: {
-    asynchSleep: env["ASYNCH_TIMER"] || 720,
     attachmentBatchSize: env["ATTACHMENT_BATCH_SIZE"] || 5000
   },
   cipher: {
@@ -27,7 +28,9 @@ module.exports = {
     bonsaiUrl: env["BONSAI_URL"],
     //todo: converge to URL (with auth prefix) once we've elminated grax configuration
     elasticIo: {
-      url: env["FOUNDELASTICSEARCH_URL"] || "https://" + env["FOUNDELASTICSEARCH_HOST"],
+      url:
+        env["FOUNDELASTICSEARCH_URL"] ||
+        "https://" + env["FOUNDELASTICSEARCH_HOST"],
       user: env["FOUNDELASTICSEARCH_USER"] || "elastic",
       password: env["FOUNDELASTICSEARCH_PASSWORD"]
     },
@@ -48,7 +51,7 @@ module.exports = {
     maxBatches: process.env["GRAX_MAX_BATCHES"] || -1,
     maxRestore: process.env["GRAX_MAX_RESTORE"] || 1000,
     orgToRestore: process.env["GRAX_ORG_TO_RESTORE"],
-    objectTypesToRestore: process.env["GRAX_OBJECT_TYPES_TO_RESTORE"] || ''
+    objectTypesToRestore: process.env["GRAX_OBJECT_TYPES_TO_RESTORE"] || ""
   },
   storage: {
     providerName: env["GRAX_STORAGE_PROVIDER_NAME"] || null,
