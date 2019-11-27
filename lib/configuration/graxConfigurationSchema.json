@@ -43,6 +43,14 @@
           "items": { "$ref": "#/definitions/timeMachine" },
           "minItems": 1,
           "maxItems": 1
+        },
+        "variables": {
+          "type": "object",
+          "patternProperties": {
+            "....*": {
+              "type": "string"
+            }
+          }
         }
       },
       "required": ["storage", "dataSources", "elastic"]
