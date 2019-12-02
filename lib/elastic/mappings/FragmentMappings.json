@@ -1,0 +1,52 @@
+{
+  "properties": {
+    "LastModifiedDate": { "type": "date" },
+    "LastFragmentAddedDate": { "type": "date" },
+    "ObjectType": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "GraxId": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "OrganizationId": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "ExecutionKey": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "doc": {
+      "type": "object",
+      "enabled": false
+    },
+    "ProcessingAttemptCount": {
+      "type": "integer"
+    },
+    "ReadyToProcessAt": {
+      "type": "date"
+    }
+  }
+}
