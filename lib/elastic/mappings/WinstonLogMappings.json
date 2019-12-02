@@ -1,0 +1,20 @@
+{
+  "properties": {
+    "@timestamp": {
+      "type": "date"
+    },
+    "@version": {
+      "type": "keyword"
+    },
+    "message": {
+      "type": "text"
+    },
+    "severity": {
+      "type": "keyword"
+    },
+    "fields": {
+      "dynamic": true,
+      "properties": {}
+    }
+  }
+}

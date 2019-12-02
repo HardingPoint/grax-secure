@@ -1,0 +1,314 @@
+{
+  "$id": "http://grax.io/schemas/graxConfiguration.json",
+  "definitions": {
+    "environments": {
+      "type": "object",
+      "patternProperties": {
+        "....*": {
+          "$ref": "#/definitions/configuration"
+        }
+      }
+    },
+    "globalEnvironmentDefaults": {
+      "type": "object"
+    },
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "storage": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/storage" },
+          "minItems": 1,
+          "maxItems": 1
+        },
+        "dataSources": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/salesforce" },
+          "minItems": 1
+        },
+        "elastic": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/elastic" },
+          "minItems": 1,
+          "maxItems": 1
+        },
+        "syncanalytics": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/syncanalytics" },
+          "minItems": 1,
+          "maxItems": 1
+        },
+        "timeMachine": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/timeMachine" },
+          "minItems": 1,
+          "maxItems": 1
+        },
+        "variables": {
+          "type": "object",
+          "patternProperties": {
+            "....*": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "required": ["storage", "dataSources", "elastic"]
+    },
+    "elastic": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string",
+          "enum": ["elasticIo", "aws", "bonsai"]
+        },
+        "name": { "type": "string" },
+        "maxbatchsize": { "type": "number" }
+      },
+      "required": ["provider", "name"],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "provider": { "const": "elasticIo" }
+            }
+          },
+          "then": {
+            "properties": {
+              "url": { "type": "string" },
+              "user": { "type": "string" },
+              "password": { "type": "string" },
+              "port": { "type": "number" }
+            },
+            "required": ["url", "user", "password"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "provider": { "const": "aws" }
+            }
+          },
+          "then": {
+            "properties": {
+              "url": { "type": "string" },
+              "accessKey": { "type": "string" },
+              "secretAccessKey": { "type": "string" },
+              "region": { "type": "string" }
+            },
+            "required": ["url", "accessKey", "secretAccessKey", "region"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "provider": { "const": "bonsai" }
+            }
+          },
+          "then": {
+            "properties": {
+              "url": { "type": "string" }
+            },
+            "required": ["url"]
+          }
+        }
+      ]
+    },
+    "salesforce": {
+      "type": "object",
+      "properties": {
+        "provider": { "const": "salesforce" },
+        "name": { "type": "string" },
+        "organizationId": { "type": "string" },
+        "userName": { "type": "string" },
+        "password": { "type": "string" },
+        "url": { "type": "string" },
+        "token": { "type": "string" }
+      },
+      "required": ["userName", "password", "url"]
+    },
+    "storage": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string",
+          "enum": ["azure", "aws", "google", "minio"]
+        },
+        "name": { "type": "string" },
+        "storageOff": { "type": "boolean" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "provider": { "const": "azure" }
+            }
+          },
+          "then": {
+            "properties": {
+              "storageAccountName": { "type": "string" },
+              "accountAccessKey": { "type": "string" },
+              "containerName": { "type": "string" }
+            },
+            "required": ["provider", "storageAccountName", "accountAccessKey", "containerName"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "provider": { "const": "aws" }
+            }
+          },
+          "then": {
+            "properties": {
+              "accessKey": { "type": "string" },
+              "secretAccessKey": { "type": "string" },
+              "bucket": { "type": "string" },
+              "region": { "type": "string" },
+              "s3AssumeRoleEnabled": { "type": "boolean" },
+              "s3AssumeRoleArn": { "type": "string" },
+              "s3AssumeRoleExternalId": { "type": "string" },
+              "s3AssumeRoleRefreshCredsInHour": { "type": "string" },
+              "s3CompatibleEndpoint": { "type": "string" },
+              "serverSideEncryption": { "type": "string" },
+              "serverSideEncryptionKmsKey": { "type": "string" }
+            },
+            "required": ["provider", "accessKey", "secretAccessKey", "bucket", "region"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "provider": { "const": "google" }
+            }
+          },
+          "then": {
+            "properties": {
+              "googleProjectId": { "type": "string" },
+              "googleBucketName": { "type": "string" },
+              "googlePrivateKeyId": { "type": "string" },
+              "googlePrivateKey": { "type": "string" },
+              "googleClienteMail": { "type": "string" },
+              "googleClientId": { "type": "string" }
+            },
+            "required": [
+              "googleProjectId",
+              "googleBucketName",
+              "googlePrivateKeyId",
+              "googlePrivateKey",
+              "googleClienteMail",
+              "googleClientId"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "provider": { "const": "minio" }
+            }
+          },
+          "then": {
+            "properties": {
+              "minioEndPoint": { "type": "string" },
+              "minioPort": { "type": "number" },
+              "minioAccessKey": { "type": "string" },
+              "minioSecretKey": { "type": "string" },
+              "minioBucketName": { "type": "string" }
+            },
+            "required": [
+              "minioEndPoint",
+              "minioPort",
+              "minioAccessKey",
+              "minioSecretKey",
+              "minioBucketName"
+            ]
+          }
+        }
+      ],
+      "required": ["provider"]
+    },
+    "syncanalytics": {
+      "type": "object",
+      "properties": {
+        "provider": { "const": "syncanalytics" },
+        "name": { "type": "string" },
+        "marketingCloudHost": { "type": "string" },
+        "marketingCloudUser": { "type": "string" },
+        "marketingCloudPassword": { "type": "string" },
+        "marketingCloudPort": { "type": "number" },
+        "syncQueryFile": { "type": "string" },
+        "syncSalesforceObjects": { "type": "string" },
+        "syncBatchSize": { "type": "number" },
+        "syncDestinationAnalyticsUrl": { "type": "string" },
+        "syncEinsteinAnalyticsDatasetName": { "type": "string" }
+      }
+    },
+    "metadataBackup": {
+      "type": "object",
+      "properties": {
+        "isEnabled": { "type": "boolean" },
+        "sourceControlProvider": {
+          "type": "string",
+          "enum": ["github", "gitlab"]
+        },
+        "sourceControlEnabled": { "type": "boolean" },
+        "name": { "type": "string" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "isEnabled": { "const": true },
+              "sourceControlEnabled": { "const": true },
+              "sourceControlProvider": { "const": "github" }
+            }
+          },
+          "then": {
+            "properties": {
+              "gitRepositoryName": { "type": "string" },
+              "gitRepoAuthorizationToken": { "type": "string" },
+              "gitUserId": { "type": "string" }
+            },
+            "required": ["gitUserId", "gitRepoAuthorizationToken", "gitRepositoryName"]
+          }
+        },
+
+        {
+          "if": {
+            "properties": {
+              "isEnabled": { "const": true },
+              "sourceControlEnabled": { "const": true },
+              "sourceControlProvider": { "const": "gitlab" }
+            }
+          },
+          "then": {
+            "properties": {
+              "gitRepositoryName": { "type": "string" },
+              "gitRepoAuthorizationToken": { "type": "string" }
+            },
+            "required": ["gitRepositoryName", "gitRepoAuthorizationToken"]
+          }
+        }
+      ],
+      "required": ["sourceControlEnabled"]
+    },
+    "timeMachine": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "queryFile": { "type": "string" }
+      }
+    }
+  },
+  "type": "object",
+  "patternProperties": {
+    "globalEnvironmentDefaults": {
+      "$ref": "#/definitions/globalEnvironmentDefaults"
+    },
+    "environments": {
+      "$ref": "#/definitions/environments"
+    }
+  },
+  "minProperties": 1,
+  "additionalProperties": false
+}
