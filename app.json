@@ -76,26 +76,6 @@
       "description": "S3 Secret Access Key",
       "value": ""
     },
-    "GRAX_DESTINATION_SFDC_PASSWORD":{
-      "description": "Destination Salesforce Password",
-      "value": "",
-      "required":false
-    },
-    "GRAX_DESTINATION_SFDC_TOKEN":{
-      "description": "Destination Salesforce Token",
-      "value": "",
-      "required":false
-    },
-    "GRAX_DESTINATION_SFDC_URL":{
-      "description": "Destination Salesforce Token",
-      "value": "https://test.salesforce.com",
-      "required":false
-    },
-    "GRAX_DESTINATION_SFDC_USERNAME":{
-      "description": "Destination Salesforce Token",
-      "value": "",
-      "required":false
-    },
     "GRAX_MAX_RESTORE":{
       "description": "Max Number to Bulk Restore",
       "value": "1000",
