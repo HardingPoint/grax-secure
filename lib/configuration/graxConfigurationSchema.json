@@ -44,6 +44,12 @@
           "minItems": 1,
           "maxItems": 1
         },
+        "pushToQueue": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/pushToQueue" },
+          "minItems": 1,
+          "maxItems": 1
+        },
         "variables": {
           "type": "object",
           "patternProperties": {
@@ -292,6 +298,44 @@
       ],
       "required": ["sourceControlEnabled"]
     },
+
+    "pushToQueue": {
+      "type": "object",
+      "properties": {
+        "provider": {"type": "string"}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "provider": { "const": "apigee" }
+            }
+          },
+          "then": {
+            "properties": {
+              "apiEndpoint": { "type": "string" },
+              "apiClientId": { "type": "string" },
+              "apiClientSecret": { "type": "string" }
+            }
+          }
+        },
+
+        {
+          "if": {
+            "properties": {
+              "provider": { "const": "kafka" },
+              "authorizationToken": {"type": "string"}
+            }
+          },
+          "then": {
+            "properties": {
+              "apiEndpoint": { "type": "string" }
+            }
+          }
+        }
+      ]
+    },
+
     "timeMachine": {
       "type": "object",
       "properties": {
