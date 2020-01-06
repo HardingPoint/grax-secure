@@ -353,6 +353,6 @@
       "$ref": "#/definitions/environments"
     }
   },
-  "minProperties": 1,
+  "minProperties": 0,
   "additionalProperties": false
 }

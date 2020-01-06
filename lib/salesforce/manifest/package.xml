@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>*</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexComponent</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexTestSuite</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Profile</name>
+    </types>
+    <types>
+	   <members>*</members>
+	   <name>ActionLinkGroupTemplate</name>
+</types>
+<!-- can you use AppSwitcher / Salesforce1 for AppMenu-->
+<types>
+	   <members>*</members>
+	   <name>AppMenu</name>
+</types>
+
+<!-- how records are approved in Salesforce -->
+<types>
+	   <members>*</members>
+	   <name>ApprovalProcess</name>
+</types>
+
+<types>
+	   <members>*</members>
+	   <name>AssignmentRules</name>
+</types>
+
+<types>
+	   <members>*</members>
+	   <name>AuthProvider</name>
+</types>
+
+<types>
+	   <members>*</members>
+	   <name>AutoResponseRules</name>
+</types>
+
+<types>
+	   <members>*</members>
+	   <name>BrandingSet</name>
+</types>
+
+<types>
+	   <members>*</members>
+	   <name>CallCenter</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Certificate</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>CleanDataService</name>
+</types>
+
+<types>
+	   <members>*</members>
+	   <name>CMSConnectSource</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>ConnectedApp</name>
+</types>
+
+<types>
+	   <members>*</members>
+	   <name>ContentAsset</name>
+</types>
+
+<types>
+	   <members>*</members>
+	   <name>CorsWhitelistOrigin</name>
+</types>
+
+<types>
+	   <members>*</members>
+	   <name>CustomApplication</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>CustomApplicationComponent</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Custom​Metadata</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>CustomLabels</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>CustomFieldTranslation</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>CustomPageWebLink</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>CustomSite</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>CustomTab</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>EventDelivery</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>EventSubscription</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>ExternalServicesRegistration</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>ExternalDataSource</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>FieldSet</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>FlexiPage</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Flow</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Group</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>GlobalValueSet</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>HomePageComponent</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>HomePageLayout</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>InstalledPackage</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Layout</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>LightningExperienceTheme</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>MatchingRules</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>ManagedTopics</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>MilestoneType</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>PermissionSet</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Portal</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>PresenceUserConfig</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>ProfilePasswordPolicy</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>ProfileSessionSetting</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>QuickAction</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>QueueRoutingConfig</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Queue</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>RecommendationStrategy</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Role</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>SamlSsoConfig</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Scontrol</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>ServiceChannel</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>ServicePresenceStatus</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Workflow</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>WaveXmd</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>WaveTemplateBundle</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>WaveLens</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>WaveDataset</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>WaveDataflow</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>WaveDashboard</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>WaveApplication</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Translations</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>ReportType</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>TransactionSecurityPolicy</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>TopicsForObjects</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Territory2Type</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Territory2Rule</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Territory2Model</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Territory2</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Territory</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>StandardValueSetTranslation</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>SynonymDictionary</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>AccountRelationshipShareRule</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>ArticleType</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Audience</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Bot</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Community</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>CommunityTemplateDefinition</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>CommunityThemeDefinition</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>CustomFeedFilter</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>CustomHelpMenuSection</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>CustomObjectTranslation</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>DataCategoryGroup</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>CustomPermission</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>DelegateGroup</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>DuplicateRule</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>EclairGeoData</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>EntitlementProcess</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>EntitlementTemplate</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>FeatureParameterBoolean</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>FeatureParameterDate</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>FeatureParameterInteger</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>FlowDefinition</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>GlobalValueSetTranslation</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>KeywordList</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>LightningBolt</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>LiveChatAgentConfig</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>LiveChatButton</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>LiveChatDeployment</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>LiveChatSensitiveDataRule</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>MlDomain</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>ModerationRule</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>NamedCredential</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Network</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>NetworkBranding</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>OwnerSharingRule</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>PathAssistant</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>PlatformCachePartition</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>PresenceDeclineReason</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>SharingRules</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>SharingSet</name>
+</types>
+<types>
+	   <members>*</members>
+	   <name>Skill</name>
+</types>
+<types>
+	   <members>Account</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>Activities</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>BusinessHours</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>ChatterAnswers</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>FileUploadAndDownloadSecurity</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>CaseSubjectParticle</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>IoT</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>Ideas</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>LiveAgent</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>LiveMessage</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>Name</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>OmniChannel</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>Opportunity</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>Order</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>PathAssistant</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>Product</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>Quote</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>RemoteSite</members>
+	   <name>Settings</name>
+</types>
+<types>
+	   <members>Security</members>
+	   <name>Settings</name>
+</types>
+    <version>45.0</version>
+</Package>
