@@ -6,12 +6,21 @@
   "keywords": ["grax", "grax.io", "salesforce", "elastic", "S3"],
   "addons": [
     {
+      "plan": "bonsai:sandbox-6",
+      "as": "BONSAI"
+    },
+    {
       "plan": "engagementgraph:hpt-test",
       "as": "ENGAGEMENTGRAPH"
     },
     {
       "plan": "scheduler:standard",
       "as": "SCHEDULER"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/HardingPoint/heroku-buildpack-vendorbinaries"
     }
   ],
   "env": {
@@ -35,7 +44,7 @@
       "description": "Debugging Flag",
       "value": "true"
     },
-    "ASYNCH_TIMER": {
+    "GRAX_ENV_ASYNC_INTERVAL_MINUTES": {
       "description": "Asynchronous Timer Interval",
       "value": "10"
     },
@@ -52,19 +61,19 @@
       "value": "true"
     },
     "S3ACCESSKEYID": {
-      "description": "S3 Access KeyID",
+      "description": "S3 Access Key",
       "value": ""
     },
     "S3BUCKET": {
-      "description": "S3 Access KeyID",
+      "description": "S3 Bucket Name",
       "value": ""
     },
     "S3REGION": {
-      "description": "S3 Access KeyID",
+      "description": "S3 Region",
       "value": ""
     },
     "S3SECRETACCESSKEY": {
-      "description": "S3 Access KeyID",
+      "description": "S3 Secret Access Key",
       "value": ""
     },
     "GRAX_MAX_RESTORE": {
