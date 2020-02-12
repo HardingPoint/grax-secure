@@ -31,6 +31,7 @@ module.exports = {
       user: env.FOUNDELASTICSEARCH_USER || "elastic",
       password: env.FOUNDELASTICSEARCH_PASSWORD
     },
+    gatewayPath: env.ELASTIC_GATEWAY_PATH,
     dateTimeFormat: "YYYY-MM-DDTHH:mm:ss",
     requestTimeout: 12000000
   },
