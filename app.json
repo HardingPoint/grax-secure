@@ -1,7 +1,7 @@
 {
   "name": "GRAX",
   "description": "GRAX Enterprise : Salesforce Data Lake",
-  "repository": "https://github.com/HardingPoint/grax.git",
+  "repository": "https://github.com/HardingPoint/grax-secure.git",
   "website": "https://grax.io",
   "keywords": ["grax", "grax.io", "salesforce", "elastic", "S3"],
   "addons": [
