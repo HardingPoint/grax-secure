@@ -2,6 +2,7 @@ const { env } = process;
 const defaultConfigName = require("../lib/configuration/configurationAdapters/environment/defaultConfigName");
 
 module.exports = {
+  apiNamePrefix: env.GRAX_ENV && env.GRAX_ENV.includes("fitbit") ? "graxtest" : "grax",
   graxBax: {
     baseUrlHost: "api.grax.io", // env["ENGAGEMENTGRAPH_APIURLHOST"] || "https://api.grax.io",
     baseUrlPath: "/test/api", // env["ENGAGEMENTGRAPH_APIURLPATH"] || "/dev/api",
@@ -31,7 +32,6 @@ module.exports = {
       user: env.FOUNDELASTICSEARCH_USER || "elastic",
       password: env.FOUNDELASTICSEARCH_PASSWORD
     },
-    gatewayPath: env.ELASTIC_GATEWAY_PATH,
     dateTimeFormat: "YYYY-MM-DDTHH:mm:ss",
     requestTimeout: 12000000
   },

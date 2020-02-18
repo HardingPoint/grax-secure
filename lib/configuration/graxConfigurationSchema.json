@@ -44,12 +44,6 @@
           "minItems": 1,
           "maxItems": 1
         },
-        "oauth": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/oauth" },
-          "minItems": 1,
-          "maxItems": 1
-          },
         "pushToQueue": {
           "type": "array",
           "items": { "$ref": "#/definitions/pushToQueue" },
@@ -75,8 +69,7 @@
           "enum": ["elasticIo", "aws", "bonsai"]
         },
         "name": { "type": "string" },
-        "maxbatchsize": { "type": "number" },
-        "gatewayPath": { "type": "string" }
+        "maxbatchsize": { "type": "number" }
       },
       "required": ["provider", "name"],
       "allOf": [
@@ -199,14 +192,18 @@
             "properties": {
               "googleProjectId": { "type": "string" },
               "googleBucketName": { "type": "string" },
+              "googlePrivateKeyId": { "type": "string" },
               "googlePrivateKey": { "type": "string" },
-              "googleClientEmail": { "type": "string" }
+              "googleClienteMail": { "type": "string" },
+              "googleClientId": { "type": "string" }
             },
             "required": [
               "googleProjectId",
               "googleBucketName",
+              "googlePrivateKeyId",
               "googlePrivateKey",
-              "googleClientEmail"
+              "googleClienteMail",
+              "googleClientId"
             ]
           }
         },
@@ -338,20 +335,7 @@
         }
       ]
     },
-    "oauth": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "clientId": {
-          "type": "string"
-        },
-        "clientSecret": {
-          "type": "string"
-        }
-      }
-    },
+
     "timeMachine": {
       "type": "object",
       "properties": {
