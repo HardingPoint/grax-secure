@@ -20,8 +20,26 @@
             }
           }
         },
+        "OrganizationId": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
         "WorkerType": {
           "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Priority": {
+          "type": "integer",
           "fields": {
             "keyword": {
               "type": "keyword",
