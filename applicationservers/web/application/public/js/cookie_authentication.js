@@ -28,9 +28,13 @@ const getCookie = function(name) {
   return null;
 };
 
-const setCookie = function(name, value) {
+const setCookie = function(name, value, exdays = 365) {
   if (name != null && value != null) {
-    document.cookie = `${name}=${value}; path=/`;
+    const d = new Date();
+    d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+    const expires = `expires=${d.toUTCString()}`;
+
+    document.cookie = `${name}=${value};${expires};path=/;Secure;SameSite=None`;
   }
 };
 
