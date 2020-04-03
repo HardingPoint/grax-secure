@@ -12,7 +12,7 @@ module.exports = {
   },
   backup: {
     attachmentBatchSize: env.ATTACHMENT_BATCH_SIZE || 5000,
-    processingSecondsPerRecord: env.ATTACHMENT_PROCESSING_SECONDS_PER_RECORD || 5
+    processingSecondsPerRecord: env.ATTACHMENT_PROCESSING_SECONDS_PER_RECORD || 4
   },
   cipher: {
     salt: env.SALT || "528DB3A0C5F797426150EAE99927EFB960DB9579277A2CF0C95D11F29AB7BB7F"

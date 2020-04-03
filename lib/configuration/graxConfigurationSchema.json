@@ -49,7 +49,13 @@
           "items": { "$ref": "#/definitions/oauth" },
           "minItems": 1,
           "maxItems": 1
-          },
+        },
+        "metadataBackup": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/metadataBackup" },
+          "minItems": 0,
+          "maxItems": 1
+        },
         "pushToQueue": {
           "type": "array",
           "items": { "$ref": "#/definitions/pushToQueue" },
@@ -305,7 +311,7 @@
     "pushToQueue": {
       "type": "object",
       "properties": {
-        "provider": {"type": "string"}
+        "provider": { "type": "string" }
       },
       "allOf": [
         {
@@ -327,7 +333,7 @@
           "if": {
             "properties": {
               "provider": { "const": "kafka" },
-              "authorizationToken": {"type": "string"}
+              "authorizationToken": { "type": "string" }
             }
           },
           "then": {
