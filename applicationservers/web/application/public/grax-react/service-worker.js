@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/grax-app/assets/precache-manifest.427f46cd08cdd0eb0e38fbc31d714a46.js"
+  "/grax-app/assets/precache-manifest.6e2dab579730bb6ade72e4b7dfeb18c6.js"
 );
 
 self.addEventListener('message', (event) => {
