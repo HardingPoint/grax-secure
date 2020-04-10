@@ -1,6 +1,9 @@
 {
   "$id": "http://grax.io/schemas/graxConfiguration.json",
   "definitions": {
+    "hashKey": {
+      "type": "string"
+    },
     "environments": {
       "type": "object",
       "patternProperties": {
@@ -307,7 +310,6 @@
       ],
       "required": ["sourceControlEnabled"]
     },
-
     "pushToQueue": {
       "type": "object",
       "properties": {
@@ -373,6 +375,9 @@
     },
     "environments": {
       "$ref": "#/definitions/environments"
+    },
+    "hashKey": {
+      "$ref": "#/definitions/hashKey"
     }
   },
   "minProperties": 0,
