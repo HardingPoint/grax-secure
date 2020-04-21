@@ -154,7 +154,7 @@
       "properties": {
         "provider": {
           "type": "string",
-          "enum": ["azure", "aws", "google", "minio"]
+          "enum": ["azure", "aws", "aws-ecs", "google", "minio"]
         },
         "name": { "type": "string" },
         "storageOff": { "type": "boolean" }
