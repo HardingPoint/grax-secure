@@ -1,10 +1,16 @@
 const { env } = process;
-const defaultConfigName = require("../lib/configuration/configurationAdapters/environment/defaultConfigName");
+const { getBaseUrlHost, getBaseUrlPath } = require("./getUrlProperties");
+
+const DEFAULT_BASE_URL_HOST = "api.grax.io";
+const DEFAULT_BASE_URL_PATH = "/test/api";
+
+const BASE_URL_HOST = env.GRAX_CONFIG_URL && getBaseUrlHost(env.GRAX_CONFIG_URL);
+const BASE_URL_PATH = env.GRAX_CONFIG_URL && getBaseUrlPath(env.GRAX_CONFIG_URL);
 
 module.exports = {
   graxBax: {
-    baseUrlHost: "api.grax.io", // env["ENGAGEMENTGRAPH_APIURLHOST"] || "https://api.grax.io",
-    baseUrlPath: "/test/api", // env["ENGAGEMENTGRAPH_APIURLPATH"] || "/dev/api",
+    baseUrlHost: BASE_URL_HOST || DEFAULT_BASE_URL_HOST, // env["ENGAGEMENTGRAPH_APIURLHOST"] || "https://api.grax.io",
+    baseUrlPath: BASE_URL_PATH || DEFAULT_BASE_URL_PATH, // env["ENGAGEMENTGRAPH_APIURLPATH"] || "/dev/api",
     apiKey: env.ENGAGEMENTGRAPH_GATEWAYTOKEN,
     apiToken: env.ENGAGEMENTGRAPH_APITOKEN,
     plainConfig: env.GRAX_USE_PLAIN_CONFIG,
