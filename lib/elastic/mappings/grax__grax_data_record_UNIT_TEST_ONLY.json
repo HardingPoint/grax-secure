@@ -1,0 +1,417 @@
+{
+  "properties": {
+    "doc": {
+      "properties": {
+        "CreatedById": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "CreatedDate": {
+          "type": "date"
+        },
+        "GRAXCompanyName": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "GRAX_Execution_Unique_Key": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "GRAX_Execution_Unique_Keys": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "GRAX_Version": {
+          "type": "long"
+        },
+        "Id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "IsDeleted": {
+          "type": "boolean"
+        },
+        "LastModifiedById": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "LastModifiedDate": {
+          "type": "date"
+        },
+        "Name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "OwnerId": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "SystemModstamp": {
+          "type": "date"
+        },
+        "attributes": {
+          "properties": {
+            "type": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "url": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "graxModifiedTime": {
+          "type": "date"
+        },
+        "grax_CreatedBy_Name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax_LastModifiedBy_Name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax_Owner_Name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax__Can_Delete_GRAX_Record__c": {
+          "type": "boolean"
+        },
+        "grax__Completed_Time__c": {
+          "type": "date"
+        },
+        "grax__Error_Message__c": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax__Execution_Unique_Key__c": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax__GRAX_Archive_Process__c": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax__GRAX_Group_GDR__c": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax__GRAX_Group_GDR__c_grax_xf_grax__grax_groupgdr__c": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax__GRAX_Schedule_Process__c": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax__GroupGDR_File_Id__c": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax__GroupGDR_Total_Records__c": {
+          "type": "float"
+        },
+        "grax__Is_Current_Execution_Record__c": {
+          "type": "boolean"
+        },
+        "grax__Last_Sent_Date__c": {
+          "type": "date"
+        },
+        "grax__Overall_SFObject_Process_End_Time__c": {
+          "type": "date"
+        },
+        "grax__Overall_SFObject_Process_Start_Time__c": {
+          "type": "date"
+        },
+        "grax__Process_Object_Index__c": {
+          "type": "float"
+        },
+        "grax__Processing_Start_Time__c": {
+          "type": "date"
+        },
+        "grax__Queued_Start_Time__c": {
+          "type": "date"
+        },
+        "grax__Records_Failed_to_Delete__c": {
+          "type": "float"
+        },
+        "grax__Records_Sent_to_GRAX__c": {
+          "type": "float"
+        },
+        "grax__Records_Successfully_Deleted__c": {
+          "type": "float"
+        },
+        "grax__Records_To_Process__c": {
+          "type": "float"
+        },
+        "grax__Salesforce_ID__c": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax__Salesforce_Object__c": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax__Sched_Proc_Hierarchy_Unique_Key__c": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax__Status__c": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax__of_Times_Sent__c": {
+          "type": "float"
+        },
+        "grax_createdbyid_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax_grax__GRAX_Archive_Process__r_Name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax_grax__GRAX_Group_GDR__r_Name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax_grax__GRAX_Schedule_Process__r_Name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax_grax__grax_archive_process__c_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax_grax__grax_data_record__c_xf": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax_grax__grax_group_gdr__c_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax_grax__grax_groupgdr__c_xf": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax_grax__grax_schedule_process__c_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax_lastmodifiedbyid_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax_ownerid_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "grax_xf": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "graxid": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "graxorgid": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        }
+      }
+    }
+  }
+}

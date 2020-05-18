@@ -1,6 +1,9 @@
 {
   "$id": "http://grax.io/schemas/graxConfiguration.json",
   "definitions": {
+    "hashKey": {
+      "type": "string"
+    },
     "environments": {
       "type": "object",
       "patternProperties": {
@@ -49,7 +52,13 @@
           "items": { "$ref": "#/definitions/oauth" },
           "minItems": 1,
           "maxItems": 1
-          },
+        },
+        "metadataBackup": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/metadataBackup" },
+          "minItems": 0,
+          "maxItems": 1
+        },
         "pushToQueue": {
           "type": "array",
           "items": { "$ref": "#/definitions/pushToQueue" },
@@ -145,7 +154,7 @@
       "properties": {
         "provider": {
           "type": "string",
-          "enum": ["azure", "aws", "google", "minio"]
+          "enum": ["azure", "aws", "aws-ecs", "google", "minio"]
         },
         "name": { "type": "string" },
         "storageOff": { "type": "boolean" }
@@ -301,11 +310,10 @@
       ],
       "required": ["sourceControlEnabled"]
     },
-
     "pushToQueue": {
       "type": "object",
       "properties": {
-        "provider": {"type": "string"}
+        "provider": { "type": "string" }
       },
       "allOf": [
         {
@@ -327,7 +335,7 @@
           "if": {
             "properties": {
               "provider": { "const": "kafka" },
-              "authorizationToken": {"type": "string"}
+              "authorizationToken": { "type": "string" }
             }
           },
           "then": {
@@ -367,6 +375,9 @@
     },
     "environments": {
       "$ref": "#/definitions/environments"
+    },
+    "hashKey": {
+      "$ref": "#/definitions/hashKey"
     }
   },
   "minProperties": 0,

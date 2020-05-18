@@ -2,20 +2,22 @@
 // Popup page to accept and check third-party cookies from Salesforce
 
 const grax = "grax";
+const lastBreakVersion = "3.30";
 
-const getParam = function(name) {
+const getParam = function(name, defaultValue = null) {
   const regexp = new RegExp(`[&?]${name}=([^&?]*)`);
 
   if (regexp.test(document.location.search)) {
     return decodeURIComponent(document.location.search.match(regexp)[1]);
   }
 
-  return null;
+  return defaultValue;
 };
 
 const urlParams = {
   opener: getParam("opener"),
-  parent: getParam("parent")
+  parent: getParam("parent"),
+  version: getParam("version", lastBreakVersion)
 };
 
 const getCookie = function(name) {
@@ -28,10 +30,18 @@ const getCookie = function(name) {
   return null;
 };
 
-const setCookie = function(name, value) {
+const setCookie = function(name, value, exdays = 365) {
   if (name != null && value != null) {
-    document.cookie = `${name}=${value}; path=/`;
+    const d = new Date();
+    d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+    const expires = `expires=${d.toUTCString()}`;
+
+    document.cookie = `${name}=${value};${expires};path=/;Secure;SameSite=None`;
   }
+};
+
+const getIsAuthenticated = () => {
+  return getCookie(grax) === urlParams.version;
 };
 
 const sendVerificationToFrame = function(frame, type, origin) {
@@ -39,7 +49,7 @@ const sendVerificationToFrame = function(frame, type, origin) {
     frame.postMessage(
       {
         type,
-        isAuthenticated: getCookie(grax) === grax
+        isAuthenticated: getIsAuthenticated()
       },
       origin
     );
@@ -47,8 +57,8 @@ const sendVerificationToFrame = function(frame, type, origin) {
 };
 
 const tryToSetGraxCookie = function() {
-  if (getCookie(grax) !== grax) {
-    setCookie(grax, grax);
+  if (getIsAuthenticated() === false) {
+    setCookie(grax, urlParams.version);
   }
 };
 
