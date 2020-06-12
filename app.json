@@ -1,9 +1,9 @@
 {
   "name": "GRAX",
   "description": "GRAX Enterprise : Salesforce Data Lake",
-  "repository": "https://github.com/HardingPoint/grax.git",
+  "repository": "https://github.com/HardingPoint/grax-secure.git",
   "website": "https://grax.io",
-  "keywords": ["grax","grax.io","salesforce","elastic","S3"],
+  "keywords": ["grax", "grax.io", "salesforce", "elastic", "S3"],
   "addons": [
     {
       "plan": "bonsai:sandbox-6",
@@ -24,19 +24,19 @@
     }
   ],
   "env": {
-    "GRAX_SFDC_USERNAME":{
+    "GRAX_SFDC_USERNAME": {
       "description": "Salesforce Username : Salesforce user for GRAX",
       "value": ""
     },
-    "GRAX_SFDC_PASSWORD":{
+    "GRAX_SFDC_PASSWORD": {
       "description": "Salesforce Password : Salesforce password for GRAX",
       "value": ""
     },
-    "GRAX_SFDC_TOKEN":{
+    "GRAX_SFDC_TOKEN": {
       "description": "Salesforce Token : Salesforce token for GRAX",
       "value": ""
     },
-    "GRAX_SFDC_URL":{
+    "GRAX_SFDC_URL": {
       "description": "Salesforce URL",
       "value": "https://test.salesforce.com"
     },
@@ -44,52 +44,57 @@
       "description": "Debugging Flag",
       "value": "true"
     },
-    "GRAX_ASYNCH_TIMER":{
+    "GRAX_ENV_ASYNC_INTERVAL_MINUTES": {
       "description": "Asynchronous Timer Interval",
       "value": "10"
     },
-    "GRAX_ESMAXBULK":{
+    "GRAX_ESMAXBULK": {
       "description": "Elastic Bulk Loading",
       "value": "300"
     },
-    "GRAX_S3_OFF":{
+    "GRAX_S3_OFF": {
       "description": "Turn off S3 Saving, be very careful. Leave ON.",
       "value": "false"
     },
-    "GRAX_AUDITTRAIL_OFF":{
+    "GRAX_AUDITTRAIL_OFF": {
       "description": "Leave OFF. Turn off GRAX AuditTrail to Postgres.",
       "value": "true"
     },
-    "S3ACCESSKEYID":{
+    "S3ACCESSKEYID": {
       "description": "S3 Access Key",
       "value": ""
     },
-    "S3BUCKET":{
+    "S3BUCKET": {
       "description": "S3 Bucket Name",
       "value": ""
     },
-    "S3REGION":{
+    "S3REGION": {
       "description": "S3 Region",
       "value": ""
     },
-    "S3SECRETACCESSKEY":{
+    "S3SECRETACCESSKEY": {
       "description": "S3 Secret Access Key",
       "value": ""
     },
-    "GRAX_MAX_RESTORE":{
+    "GRAX_MAX_RESTORE": {
       "description": "Max Number to Bulk Restore",
       "value": "1000",
-      "required":false
+      "required": false
     },
-    "GRAX_OBJECT_TYPES_TO_RESTORE":{
+    "GRAX_OBJECT_TYPES_TO_RESTORE": {
       "description": "Salesforce Object Types to Restore",
       "value": "",
-      "required":false
+      "required": false
     },
-    "GRAX_SYNCHID":{
+    "GRAX_SYNCHID": {
       "description": "Salesforce Object Name to Restore",
       "value": "GRAX_RESTORE",
-      "required":false
+      "required": false
+    },
+    "ATTACHMENT_BATCH_SIZE": {
+      "description": "Async Attachment Backup Data Records to Bulk Update",
+      "value": "5000",
+      "required": false
     }
   }
 }
