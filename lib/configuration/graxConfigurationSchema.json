@@ -1,6 +1,9 @@
 {
   "$id": "http://grax.io/schemas/graxConfiguration.json",
   "definitions": {
+    "hashKey": {
+      "type": "string"
+    },
     "environments": {
       "type": "object",
       "patternProperties": {
@@ -44,6 +47,18 @@
           "minItems": 1,
           "maxItems": 1
         },
+        "oauth": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/oauth" },
+          "minItems": 1,
+          "maxItems": 1
+        },
+        "metadataBackup": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/metadataBackup" },
+          "minItems": 0,
+          "maxItems": 1
+        },
         "pushToQueue": {
           "type": "array",
           "items": { "$ref": "#/definitions/pushToQueue" },
@@ -69,7 +84,8 @@
           "enum": ["elasticIo", "aws", "bonsai"]
         },
         "name": { "type": "string" },
-        "maxbatchsize": { "type": "number" }
+        "maxbatchsize": { "type": "number" },
+        "gatewayPath": { "type": "string" }
       },
       "required": ["provider", "name"],
       "allOf": [
@@ -129,16 +145,20 @@
         "userName": { "type": "string" },
         "password": { "type": "string" },
         "url": { "type": "string" },
-        "token": { "type": "string" }
+        "token": { "type": "string" },
+        "graxOAuthURL": { "type": "string" }
       },
-      "required": ["userName", "password", "url"]
+      "dependencies": {
+        "graxOAuthURL": ["organizationId","userName","url"],
+        "password": ["userName", "password", "url"]
+      }
     },
     "storage": {
       "type": "object",
       "properties": {
         "provider": {
           "type": "string",
-          "enum": ["azure", "aws", "google", "minio"]
+          "enum": ["azure", "aws", "aws-ecs", "google", "minio"]
         },
         "name": { "type": "string" },
         "storageOff": { "type": "boolean" }
@@ -192,18 +212,14 @@
             "properties": {
               "googleProjectId": { "type": "string" },
               "googleBucketName": { "type": "string" },
-              "googlePrivateKeyId": { "type": "string" },
               "googlePrivateKey": { "type": "string" },
-              "googleClienteMail": { "type": "string" },
-              "googleClientId": { "type": "string" }
+              "googleClientEmail": { "type": "string" }
             },
             "required": [
               "googleProjectId",
               "googleBucketName",
-              "googlePrivateKeyId",
               "googlePrivateKey",
-              "googleClienteMail",
-              "googleClientId"
+              "googleClientEmail"
             ]
           }
         },
@@ -298,11 +314,10 @@
       ],
       "required": ["sourceControlEnabled"]
     },
-
     "pushToQueue": {
       "type": "object",
       "properties": {
-        "provider": {"type": "string"}
+        "provider": { "type": "string" }
       },
       "allOf": [
         {
@@ -324,7 +339,7 @@
           "if": {
             "properties": {
               "provider": { "const": "kafka" },
-              "authorizationToken": {"type": "string"}
+              "authorizationToken": { "type": "string" }
             }
           },
           "then": {
@@ -335,7 +350,20 @@
         }
       ]
     },
-
+    "oauth": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "clientSecret": {
+          "type": "string"
+        }
+      }
+    },
     "timeMachine": {
       "type": "object",
       "properties": {
@@ -351,6 +379,9 @@
     },
     "environments": {
       "$ref": "#/definitions/environments"
+    },
+    "hashKey": {
+      "$ref": "#/definitions/hashKey"
     }
   },
   "minProperties": 0,

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Popup page to accept and check third-party cookies from Salesforce -->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link
+    href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII="
+    rel="icon" type="image/x-icon">
+  <title>Permissions Required</title>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.8.3/styles/salesforce-lightning-design-system.min.css">
+</head>
+
+<body class="slds-scope">
+
+  <div id="accept_cookies" style="display:none;">
+    <div class="slds-grid slds-grid_align-center">
+      <div>
+        <div class="slds-text-align_center slds-m-top_large">
+          <img src="/grax-app/public/GRAX_LOGO_NEW.png" width="260" alt="GRAX">
+          <h3 class="slds-text-heading_medium slds-m-vertical_small">Allow Access?</h3>
+        </div>
+        <div class="slds-box slds-col" style="background:#fff;width:50vw;max-width:75vh;">
+          <p><b>GRAX</b> is asking to:</p>
+          <ul class="slds-list_dotted slds-m-top_x-small">
+            <li>Check browser permissions</li>
+            <li>Set custom cookies on external site</li>
+            <li>Communicate between tabs</li>
+          </ul>
+          <p class="slds-m-top_x-small">
+            Do you want to allow access for <br /><span id="origin"></span>?
+          </p>
+          <div id="extra_safari_requirements" class="slds-m-top_medium" style="display:none;">
+            <p><b>Manual Requirements:</b></p>
+            <ul class="slds-list_dotted slds-m-top_x-small">
+              <li>In the Safari app on your Mac, choose Safari > Preferences, then click Privacy.</li>
+              <li>Disable "Prevent cross-site tracking."</li>
+            </ul>
+          </div>
+          <div class="slds-grid slds-grid_align-center slds-m-top_small">
+            <button id="deny_cookies_button" class="slds-button slds-button_neutral slds-button_stretch">Deny</button>
+            <button id="accept_cookies_button" class="slds-button slds-button_brand slds-button_stretch">Allow</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="slds-m-around_large slds-text-align_center">Copyright &copy; <span id="year"></span> – GRAX. All Rights
+      Reserved.</p>
+  </div>
+
+  <script src="/grax-app/public/js/cookie_authentication.js"></script>
+</body>
+
+</html>

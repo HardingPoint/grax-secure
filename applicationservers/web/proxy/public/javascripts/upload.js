@@ -1,13 +1,15 @@
+/* eslint-disable no-undef */
 (function() {
-  var $dropzone = $("#dropzone");
+  const $dropzone = $("#dropzone");
+  const $uploadInput = $("#upload-input");
 
   $(".upload-btn").on("click", function() {
-    $("#upload-input").click();
+    $uploadInput.click();
     $(".progress-bar").text("0%");
     $(".progress-bar").width("0%");
   });
 
-  $dropzone.on("dragover", function (e) {
+  $dropzone.on("dragover", function(e) {
     $dropzone.addClass("slds-has-drag-over");
     e.preventDefault();
     e.stopPropagation();
@@ -17,27 +19,27 @@
     $dropzone.removeClass("slds-has-drag-over");
   });
 
-  $dropzone.on("dragenter", function (e) {
+  $dropzone.on("dragenter", function(e) {
     e.preventDefault();
     e.stopPropagation();
   });
 
-  var uploadHandler = function(files) {
+  const uploadHandler = function(files) {
     if (files.length > 0) {
       // create a FormData object which will be sent as the data payload in the
       // AJAX request
-      var formData = new FormData();
+      const formData = new FormData();
 
       // loop through all the selected files and add them to the formData object
       for (var i = 0; i < files.length; i++) {
-        var file = files[i];
+        const file = files[i];
         // add the files to formData object for the data payload
         formData.append("uploads[]", file, file.name);
       }
 
-      var updateProgressBar = function(percentComplete) {
-        $(".progress-bar .slds-assistive-text").text(percentComplete + '%');
-        $(".progress-bar").width(percentComplete + '%');
+      const updateProgressBar = function(percentComplete) {
+        $(".progress-bar .slds-assistive-text").text(`${percentComplete}%`);
+        $(".progress-bar").width(`${percentComplete}%`);
       };
 
       $.ajax({
@@ -58,7 +60,7 @@
         },
         xhr() {
           // create an XMLHttpRequest
-          var xhr = new XMLHttpRequest();
+          const xhr = new XMLHttpRequest();
 
           // listen to the 'progress' event
           xhr.upload.addEventListener(
@@ -66,7 +68,7 @@
             function(evt) {
               if (evt.lengthComputable) {
                 // calculate the percentage of upload completed
-                var percentComplete = evt.loaded / evt.total;
+                let percentComplete = evt.loaded / evt.total;
                 percentComplete = parseInt(percentComplete * 100);
 
                 // update the Bootstrap progress bar with the new percentage
@@ -90,8 +92,14 @@
     }
   };
 
-  $("#upload-input").on("change", function() {
-    uploadHandler($(this).get(0).files);
+  $uploadInput.on("click", function() {
+    $uploadInput.val(null);
+  });
+
+  $uploadInput.on("change", function(e) {
+    if (e.target.value != null) {
+      uploadHandler($(this).get(0).files);
+    }
   });
 
   $dropzone.on("drop", function(e) {
