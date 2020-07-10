@@ -194,7 +194,6 @@
               "s3AssumeRoleEnabled": { "type": "boolean" },
               "s3AssumeRoleArn": { "type": "string" },
               "s3AssumeRoleExternalId": { "type": "string" },
-              "s3AssumeRoleRefreshCredsInHour": { "type": "string" },
               "s3CompatibleEndpoint": { "type": "string" },
               "serverSideEncryption": { "type": "string" },
               "serverSideEncryptionKmsKey": { "type": "string" }
