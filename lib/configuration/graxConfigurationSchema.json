@@ -149,7 +149,7 @@
         "graxOAuthURL": { "type": "string" }
       },
       "dependencies": {
-        "graxOAuthURL": ["organizationId","userName","url"],
+        "graxOAuthURL": ["organizationId", "userName", "url"],
         "password": ["userName", "password", "url"]
       }
     },
@@ -352,6 +352,9 @@
     "oauth": {
       "type": "object",
       "properties": {
+        "enableOAuth": {
+          "type": "boolean"
+        },
         "name": {
           "type": "string"
         },
@@ -359,6 +362,9 @@
           "type": "string"
         },
         "clientSecret": {
+          "type": "string"
+        },
+        "tokenUrl": {
           "type": "string"
         }
       }
