@@ -146,7 +146,8 @@
         "password": { "type": "string" },
         "url": { "type": "string" },
         "token": { "type": "string" },
-        "graxOAuthURL": { "type": "string" }
+        "graxOAuthURL": { "type": "string" },
+        "type": { "type": "string" }
       },
       "dependencies": {
         "graxOAuthURL": ["organizationId", "userName", "url"],
