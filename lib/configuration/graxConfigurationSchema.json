@@ -145,9 +145,14 @@
         "userName": { "type": "string" },
         "password": { "type": "string" },
         "url": { "type": "string" },
-        "token": { "type": "string" }
+        "token": { "type": "string" },
+        "graxOAuthURL": { "type": "string" },
+        "type": { "type": "string" }
       },
-      "required": ["userName", "password", "url"]
+      "dependencies": {
+        "graxOAuthURL": ["organizationId", "userName", "url"],
+        "password": ["userName", "password", "url"]
+      }
     },
     "storage": {
       "type": "object",
@@ -190,7 +195,6 @@
               "s3AssumeRoleEnabled": { "type": "boolean" },
               "s3AssumeRoleArn": { "type": "string" },
               "s3AssumeRoleExternalId": { "type": "string" },
-              "s3AssumeRoleRefreshCredsInHour": { "type": "string" },
               "s3CompatibleEndpoint": { "type": "string" },
               "serverSideEncryption": { "type": "string" },
               "serverSideEncryptionKmsKey": { "type": "string" }
@@ -349,6 +353,9 @@
     "oauth": {
       "type": "object",
       "properties": {
+        "enableOAuth": {
+          "type": "boolean"
+        },
         "name": {
           "type": "string"
         },
@@ -356,6 +363,9 @@
           "type": "string"
         },
         "clientSecret": {
+          "type": "string"
+        },
+        "tokenUrl": {
           "type": "string"
         }
       }
