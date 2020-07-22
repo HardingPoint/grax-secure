@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1c7a78bb75e04e2c78c243028c6afb2c",
+    "revision": "5b0c84a845229bb7fa9edc7a1d733723",
     "url": "/grax-app/assets/index.html"
   },
   {
