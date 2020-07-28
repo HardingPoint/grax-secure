@@ -1,10 +1,8 @@
 /* eslint-disable no-undef */
-// Popup page to accept and check third-party cookies from Salesforce
-
 const grax = "grax";
 const lastBreakVersion = "3.30";
 
-const getParam = function(name, defaultValue = null) {
+const getParam = function (name, defaultValue = null) {
   const regexp = new RegExp(`[&?]${name}=([^&?]*)`);
 
   if (regexp.test(document.location.search)) {
@@ -20,7 +18,7 @@ const urlParams = {
   version: getParam("version", lastBreakVersion)
 };
 
-const getCookie = function(name) {
+const getCookie = function (name) {
   const regexp = new RegExp(`[^;]?${name}=([^;]*)`);
 
   if (regexp.test(document.cookie)) {
@@ -30,7 +28,7 @@ const getCookie = function(name) {
   return null;
 };
 
-const setCookie = function(name, value, exdays = 365) {
+const setCookie = function (name, value, exdays = 365) {
   if (name != null && value != null) {
     const d = new Date();
     d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
@@ -44,7 +42,7 @@ const getIsAuthenticated = () => {
   return getCookie(grax) === urlParams.version;
 };
 
-const sendVerificationToFrame = function(frame, type, origin) {
+const sendVerificationToFrame = function (frame, type, origin) {
   if (frame != null && frame.location != null) {
     frame.postMessage(
       {
@@ -56,7 +54,7 @@ const sendVerificationToFrame = function(frame, type, origin) {
   }
 };
 
-const tryToSetGraxCookie = function() {
+const tryToSetGraxCookie = function () {
   if (getIsAuthenticated() === false) {
     setCookie(grax, urlParams.version);
   }
@@ -75,7 +73,7 @@ if (window.opener != null && window.location.href !== urlParams.opener) {
     document.getElementById("extra_safari_requirements").style.display = "";
   }
 
-  document.getElementById("accept_cookies_button").onclick = function(e) {
+  document.getElementById("accept_cookies_button").onclick = function (e) {
     // Try to generate cookie to confirm permissions
     tryToSetGraxCookie();
 
@@ -84,7 +82,7 @@ if (window.opener != null && window.location.href !== urlParams.opener) {
     e.preventDefault();
   };
 
-  document.getElementById("deny_cookies_button").onclick = function(e) {
+  document.getElementById("deny_cookies_button").onclick = function (e) {
     window.close();
 
     e.preventDefault();
