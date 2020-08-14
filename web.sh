@@ -6,6 +6,6 @@ set -ex
 if [ -z "$GRAX_FLAGS" ]; then
     ./grax web
 else
-    ./grax-proxy &
-    PORT=5000 ./grax web
+    PORT=5000 ./grax web &
+    ./grax-proxy
 fi
