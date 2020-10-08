@@ -54,7 +54,7 @@
         contentType: false,
         success(data) {
           alert("GRAX Upload Succcessful");
-          console.log("upload successful!\n " + data);
+          console.log("upload successful!\n ");
 
           updateProgressBar(0);
         },
