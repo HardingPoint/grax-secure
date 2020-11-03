@@ -199,7 +199,7 @@
               "serverSideEncryption": { "type": "string" },
               "serverSideEncryptionKmsKey": { "type": "string" }
             },
-            "required": ["provider", "accessKey", "secretAccessKey", "bucket", "region"]
+            "required": ["provider", "bucket", "region"]
           }
         },
         {
