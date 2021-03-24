@@ -16,7 +16,25 @@ const getBaseUrlPath = url => {
   return undefined;
 };
 
+const getBaseUrlPort = url => {
+  if (url) {
+    const urlObject = URL.parse(url, true);
+    return urlObject.port;
+  }
+  return undefined;
+};
+
+const getBaseUrlProtocol = url => {
+  if (url) {
+    const urlObject = URL.parse(url, true);
+    return urlObject.protocol;
+  }
+  return undefined;
+};
+
 module.exports = {
   getBaseUrlHost,
-  getBaseUrlPath
+  getBaseUrlPath,
+  getBaseUrlPort,
+  getBaseUrlProtocol,
 };

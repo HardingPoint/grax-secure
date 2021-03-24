@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4ce37a1ca5c26de6322c92c8beb5b56d",
+    "revision": "dce2d12a0862c38825bb375ceeb3bd07",
     "url": "/grax-app/assets/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/grax-app/assets/static/css/6.6aca7ac7.chunk.css"
   },
   {
-    "revision": "14cc4eed5c0af8785501",
+    "revision": "98f15a150b616008c0c4",
     "url": "/grax-app/assets/static/css/main.6e16f8e2.chunk.css"
   },
   {
@@ -84,8 +84,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/grax-app/assets/static/js/9.aea378a7.chunk.js"
   },
   {
-    "revision": "14cc4eed5c0af8785501",
-    "url": "/grax-app/assets/static/js/main.83388a9f.chunk.js"
+    "revision": "98f15a150b616008c0c4",
+    "url": "/grax-app/assets/static/js/main.70dc255b.chunk.js"
   },
   {
     "revision": "4fad4f7052945e1c2dd9",
