@@ -118,7 +118,7 @@
               "secretAccessKey": { "type": "string" },
               "region": { "type": "string" }
             },
-            "required": ["url", "accessKey", "secretAccessKey", "region"]
+            "required": ["url", "region"]
           }
         },
         {
