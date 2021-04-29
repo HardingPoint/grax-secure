@@ -18,5 +18,10 @@
     {
       "url": "https://github.com/HardingPoint/heroku-buildpack-vendorbinaries"
     }
-  ]
+  ],
+  "env": {
+    "GRAX_HQ_URL": "https://:MyvppZmUkZlUQzPgskFzqCsksUL5i6@hq.grax.com",
+    "GRAX_FLAGS": "xray",
+    "SENTRY_URL": "https://69e6c5227efd4b37a3592464b91c3798@o401886.ingest.sentry.io/5262138"
+  }
 }
